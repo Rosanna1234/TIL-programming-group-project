@@ -20,6 +20,7 @@ We combine accident data (BRON) with traffic volumes (INWEVA) from Rijkswatersta
 | File | Description |
 |------|-------------|
 | `project_proposal_group32.ipynb` | Project proposal: research question, data and approach |
+| `project_proposal_group32.html` | HTML export of the project proposal |
 
 ## Data
 All data is open data from Rijkswaterstaat:
