@@ -3,8 +3,8 @@ import pandas as pd
 import geopandas as gpd
 
 # ============================================================
-# SIMPLE CLEANING PIPELINE FOR TIL6022
-# Put this file in the SAME folder as the raw data.
+# Put this file in the project folder.
+# Raw data must be stored in ./raw_data/
 # Cleaned CSVs are written automatically to ./cleaned_data/
 # ============================================================
 
@@ -27,9 +27,9 @@ REQUIRED_FILES = [
     F_ROADS,
     F_ACCIDENTS,
     F_INWEVA_SHP,
-    BASE_DIR / "INWEVA2025.dbf",
-    BASE_DIR / "INWEVA2025.shx",
-    BASE_DIR / "INWEVA2025.prj",
+    RAW_DIR / "INWEVA2025.dbf",
+    RAW_DIR / "INWEVA2025.shx",
+    RAW_DIR / "INWEVA2025.prj",
 ]
 
 missing = [f.name for f in REQUIRED_FILES if not f.exists()]
