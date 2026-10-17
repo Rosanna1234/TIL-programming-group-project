@@ -365,16 +365,16 @@ count_cols = [
 ]
 analysis[count_cols] = analysis[count_cols].fillna(0).astype(int)
 
-analysis["CRASH_RATE_PER_100M_VKM"] = (
+analysis["CRASH_RATE_PER_M_VKM"] = (
     analysis["TOTAL_CRASHES"]
     / analysis["ANNUAL_VEHICLE_KM"]
-    * 100_000_000
+    * 1_000_000
 ).where(analysis["ANNUAL_VEHICLE_KM"] > 0)
 
-analysis["INJURY_FATAL_RATE_PER_100M_VKM"] = (
+analysis["INJURY_FATAL_RATE_PER_M_VKM"] = (
     analysis["INJURY_FATAL_CRASHES"]
     / analysis["ANNUAL_VEHICLE_KM"]
-    * 100_000_000
+    * 1_000_000
 ).where(analysis["ANNUAL_VEHICLE_KM"] > 0)
 
 analysis["ROAD_NUMBER"] = analysis["VBN_OMS_TXT"].str.extract(
@@ -414,8 +414,8 @@ final = pd.DataFrame({
     "INJURY_CRASHES": analysis["INJURY_CRASHES"],
     "FATAL_CRASHES": analysis["FATAL_CRASHES"],
     "INJURY_FATAL_CRASHES": analysis["INJURY_FATAL_CRASHES"],
-    "CRASH_RATE_PER_100M_VKM": analysis["CRASH_RATE_PER_100M_VKM"],
-    "INJURY_FATAL_RATE_PER_100M_VKM": analysis["INJURY_FATAL_RATE_PER_100M_VKM"],
+    "CRASH_RATE_PER_M_VKM": analysis["CRASH_RATE_PER_M_VKM"],
+    "INJURY_FATAL_RATE_PER_M_VKM": analysis["INJURY_FATAL_RATE_PER_M_VKM"],
     "GEOMETRY_WKT": analysis["GEOMETRY_WKT"],
 })
 
