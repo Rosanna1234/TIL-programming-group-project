@@ -368,13 +368,13 @@ analysis[count_cols] = analysis[count_cols].fillna(0).astype(int)
 analysis["CRASH_RATE_PER_M_VKM"] = (
     analysis["TOTAL_CRASHES"]
     / analysis["ANNUAL_VEHICLE_KM"]
-    * 100_000
+    * 1_000_000
 ).where(analysis["ANNUAL_VEHICLE_KM"] > 0)
 
 analysis["INJURY_FATAL_RATE_PER_M_VKM"] = (
     analysis["INJURY_FATAL_CRASHES"]
     / analysis["ANNUAL_VEHICLE_KM"]
-    * 100_000
+    * 1_000_000
 ).where(analysis["ANNUAL_VEHICLE_KM"] > 0)
 
 analysis["ROAD_NUMBER"] = analysis["VBN_OMS_TXT"].str.extract(
