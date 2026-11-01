@@ -5,3 +5,6 @@ pyogrio
 matplotlib
 statsmodels
 ipykernel
+numpy
+scipy
+jupyter
