@@ -23,7 +23,6 @@ Busy motorway sections have many crashes simply because many vehicles use them. 
 | `analysis_subq1.ipynb` | Sub-question 1: crash counts vs. crash rates |
 | `analysis_subq2.ipynb` | Sub-question 2: Negative Binomial regression on carriageway and traffic characteristics |
 | `analysis_subq3.ipynb` | Sub-question 3: overall vs. injury/fatal crash rates |
-| `read_data.ipynb` | First exploration of the raw data files |
 | `figures/` | Figures produced by the analysis notebooks |
 | `cleaned_data/` | Cleaned, analysis-ready data (output of `clean_data.py`) |
 | `project_proposal_group32.ipynb` / `.html` | Project proposal |
