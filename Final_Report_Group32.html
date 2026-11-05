@@ -7961,7 +7961,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Reproducibility check: load the dataset produced by clean_data.py</span>
@@ -8086,7 +8086,7 @@ a.anchor-link {
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Carriageway sections                          1228
 Sections with traffic data                    1223
@@ -8147,7 +8147,7 @@ $$</p>
 </tbody>
 </table>
 <p>For SQ1 and SQ3, sections with fewer than 1 million annual vehicle-kilometres are excluded from rate comparisons to reduce extreme values caused by very low traffic exposure. This threshold retains 849 sections and 7,103 crashes (97.4% of all assigned crashes). Alternative thresholds of 0.5, 2, and 5 million vehicle-kilometres were also examined. SQ2 does not apply this threshold in its primary regression because traffic volume and section length are included as control variables.</p>
-<p>Two methodological considerations should be noted. First, annual exposure is estimated by multiplying the supplied weekday traffic intensity by 365, assuming it reasonably represents daily traffic throughout the year. Second, exposure-adjusted rates describe observed accident frequency, while regression estimates identify statistical associations after controlling for selected characteristics. Neither measure independently establishes causality.</p>
+<p>Two remarks apply to all sub-questions. First, annual exposure is estimated by multiplying the weekday traffic intensity by 365, so we assume that weekday traffic is representative for the whole year. Second, both the crash rates and the regression show associations, not causes.</p>
 </div>
 </div>
 </div>
@@ -8347,8 +8347,9 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>None of the sections appears in both top-10 lists. The sections with the most crashes are long, busy main carriageways (1–6 km, 45,000–88,000 vehicles/day) with 73–159 crashes, but their rates are modest (0.4–2.7 crashes per million vehicle-kilometres). In contrast, eight of the ten highest rates occur on short on- and off-ramps (250–730 m), mainly around Rotterdam. These sections have only 6–15 crashes, but 3.9–8.9 crashes per million vehicle-kilometres.</p>
-<p>Across the 849 eligible sections the two rankings are positively related (Spearman $\rho=0.71$). This correlation is partly driven by the many sections with zero or very few crashes, which rank low on both measures. Among sections with at least one crash, the correlation drops to $\rho=0.40$. Figure 1 illustrates the pattern: high-count sections lie at the far right of the exposure axis, whereas high-rate sections have moderate exposure but many crashes for that level of exposure.</p>
+<p>None of the sections appears in both top-10 lists. The sections with the most crashes are long, busy main carriageways (1–6 km, 45,000–88,000 vehicles/day) with 73–159 crashes, but their rates are modest (0.4–2.7 crashes per million vehicle-kilometres). In contrast, eight of the ten highest rates occur on short on- and off-ramps (250–600 m), mainly around Rotterdam. These sections have only 6–15 crashes, but 3.9–8.9 crashes per million vehicle-kilometres.
+There is no overlap at tested thersholds at 0.5, 1 and 2 million vehicle-kilometres, and one shared section at 5 million. Which sections top the rate ranking depends on the threshold. With threshold of more than 2 million vehicle-kilometres most ramps drop out, because short ramps rarely carry that much traffic. The top 10 then consists mainly of main carriageways.</p>
+<p>Across the 849 eligible sections the two rankings are positively related (Spearman $\rho=0.71$). This correlation is partly driven by the many sections with zero or very few crashes, which rank low on both measures. Among sections with at least one crash, the correlation drops to $\rho=0.40$. Figure 1 illustrates the pattern: high-count sections lie at the far right of the exposure axis, whereas high-rate sections have low exposure, just above the threshold, but many crashes for that level of exposure.</p>
 </div>
 </div>
 </div>
@@ -8371,7 +8372,7 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Because rates of individual short sections are based on few crashes, we also pooled crashes and exposure by carriageway type. This gives a more stable, less section-specific comparison: off-ramps 1.00, on-ramps 0.93, and main carriageways 0.65 crashes per million vehicle-kilometres. Main carriageways nonetheless account for the large majority of recorded accidents (6,324 of 7,293). These pooled comparisons are descriptive, not adjusted for other characteristics.</p>
+<p>Because rates of individual short sections are based on few crashes, we also pooled crashes and exposure by carriageway type. They are based on more crashes, so they are less affected by chance. Off-ramps have 1.00, on-ramps 0.93, and main carriageways 0.65 crashes per million vehicle-kilometres. Main carriageways nonetheless account for the large majority of recorded accidents (6,324 of 7,293). These pooled comparisons are descriptive, not adjusted for other characteristics. They do not depend on a threshold.</p>
 </div>
 </div>
 </div>
@@ -8716,7 +8717,21 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="AI-Statement">AI Statement<a class="anchor-link" href="#AI-Statement">¶</a></h2><p>In this project we used Claude as a generative AI tool to support our work. We mainly used it to improve our English and the academic quality of our writing, for example by rewriting our texts into clearer sentences and keeping the terms consistent throughout the report. It also helped us to structure the report and to draft parts of the text, such as the description of the data and the processing pipeline, based on our own code, results and choices. In addition, AI was used to help write and debug parts of the Python code for the data cleaning. All research questions, data choices and analysis methods were decided by the group. We checked and ran all code ourselves, checked the numbers in the report against our own results, and we remain fully responsible for the content of this report.</p>
+<h2 id="AI-Statement">AI Statement<a class="anchor-link" href="#AI-Statement">¶</a></h2><p>In this project we used Claude as a generative AI tool to support our work. We mainly used it to improve our English and the academic quality of our writing, for example by rewriting our texts into clearer sentences and keeping the terms consistent throughout the report. It also helped us to structure the report and to draft parts of the text, such as the description of the data and the processing pipeline, based on our own code, results and choices. In addition, AI was used to help write and debug parts of the Python code for the data cleaning and analysis. All research questions, data choices and analysis methods were decided by the group. We checked and ran all code ourselves, checked the numbers in the report against our own results, and we remain fully responsible for the content of this report.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=851b9d3a-58b5-41ff-a263-d92a52adcb8b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
 </div>
 </div>
 </div>
