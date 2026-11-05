@@ -1,6 +1,5 @@
 data/
 raw_data/
-cleaned_data/
 .venv/
 __pycache__/
 *.pyc

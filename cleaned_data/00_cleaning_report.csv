@@ -1,0 +1,12 @@
+CHECK,VALUE
+All INWEVA carriageways,8763
+A-road carriageways,6920
+Selected South Holland A-road carriageways,1228
+Boundary-crossing carriageways excluded,19
+Outside South Holland excluded,5656
+No usable municipality mapping excluded,17
+Selected sections with traffic data,1223
+Directly assigned crashes,7172
+Uniquely assigned junction crashes,121
+Ambiguous junction crashes,10
+Rows in final analysis dataset,1228
